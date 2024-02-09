@@ -58,10 +58,16 @@ public class Employees {
     private String notes;
 
     @Column(name="reports_to")
-    private long reportsTo;
+    private Long reportsTo;
 
     @Column(name="photo_path")
     private String photoPath;
+
+    
+
+    public Employees(){
+        
+    }
 
     public long getEmployeeId() {
         return employeeId;
@@ -191,11 +197,11 @@ public class Employees {
         this.notes = notes;
     }
 
-    public long getReportsTo() {
+    public Long getReportsTo() {
         return reportsTo;
     }
 
-    public void setReportsTo(long reportsTo) {
+    public void setReportsTo(Long reportsTo) {
         this.reportsTo = reportsTo;
     }
 
