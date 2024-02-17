@@ -16,16 +16,24 @@
                 <th>Posición</th>
                 <th>Salario</th>
                 <th></th>
+                <th></th>
             </tr>
             <tr th:each="employees : ${employees}">
                 <td th:text="${employees.employeeId}"></td>
                 <td th:text="${employees.firstName}"></td>
                 <td th:text="${employees.lastName}"></td>
                 <td th:text="${employees.title}"></td>
-                <td>Editar</td>
-                <td>Eliminar</td>
+                <td><a th:href="@{/employees/{id}/edit(id=${employees.employeeId})}">Editar</a></td>
+                <td>
+                    <form th:action="@{/employees/{id}(id=${employees.employeeId})}" method="post">
+                        <input type="hidden" name="_method" value="delete" />
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
 
             </tr>
+
+            <button><a href="/employees/create">Create</a></button>
         </table>
     </main>
 </body>

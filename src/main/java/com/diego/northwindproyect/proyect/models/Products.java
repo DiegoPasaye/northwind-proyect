@@ -44,17 +44,13 @@ public class Products {
 
 
     //!!!!!!
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Categories category;
+    // @ManyToOne
+    // @JoinColumn(name = "category_id")
+    // private Categories category;
 
 
     public Products(){
-        
     }
-    public Products(int i, String string, int j, int k, int l, int m, int n, int o, boolean b) {
-    }
-
     public long getProductId() {
         return productId;
     }
@@ -127,12 +123,12 @@ public class Products {
         this.discontinued = discontinued;
     }
 
-    public Categories getCategory() {
-        return category;
-    }
+    // public Categories getCategory() {
+    //     return category;
+    // }
 
-    public void setCategory(Categories category) {
-        this.category = category;
-    
+    // public void setCategory(Categories category) {
+    //     this.category = category;
+    // } 
 }
-}
+

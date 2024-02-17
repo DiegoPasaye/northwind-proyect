@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+</head>
+<body>
+    <main>
+        <form action="#" th:action="@{/products/new}" th:object="${products}" method="post">
+            <input type="number" th:field="*{productId}" placeholder="Product ID:">
+            <input type="text" th:field="*{productName}" placeholder="Product name:">
+            <input type="number" th:field="*{supplierId}" placeholder="Supplier id:">
+            <input type="text" th:field="*{quantityPerUnit}" placeholder="Quantity per unit:">
+            <input type="number" th:field="*{unitPrice}" placeholder="Unit price:">
+            <input type="number" th:field="*{unitsInStock}" placeholder="Units in stock">
+            <input type="number" th:field="*{unitsOnOrder}"placeholder="Units on order:">
+            <input type="number" th:field="*{reorderLevel}" placeholder="Reorder level:">
+            <!--ERROOOOOOR, WHY? IF I TRY WITH DISCONTINUED, IT BROKE: An error happened during template parsing (template: "class path resource [templates/product/create.html]")-->
+            <input type="number" placeholder="Discontinued:">
+            <button type="submit" value="crear">Crear</button>
+        </form>
+        
+    </main>
+</body>
+</html>

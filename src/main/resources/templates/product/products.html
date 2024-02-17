@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Northwind Proyect</title>
+    <link rel="stylesheet" href="../../static/css/products.css" th:href="@{/css/products.css}">
 </head>
 <body>
     <main>
+        <nav>
+            <h2>Proyect</h2>
 
-        <h1>Products</h1>
+            <div>
+                <a href="">Products</a>
+                <a href="">Employees</a>
+                <a href="">Clients</a>
+            </div>
+        </nav>
+
         <table>
             <tr>
                 <th>ID</th>
@@ -16,17 +25,24 @@
                 <th>Price</th>
                 <th>Stock</th>
                 <th></th>
+                <th></th>
             </tr>
             <tr th:each="products : ${products}">
                 <td th:text="${products.productId}"></td>
                 <td th:text="${products.productName}"></td>
                 <td th:text="${products.unitPrice}"></td>
                 <td th:text="${products.unitsInStock}"></td>
-                <td>Editar</td>
-                <td>Eliminar</td>
-
+                <td><a th:href="@{/products/{id}/edit(id=${products.productId})}">Editar</a></td>
+                <td>
+                    <form th:action="@{/products/{id}(id=${products.productId})}" method="post">
+                        <input type="hidden" name="_method" value="delete" />
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
             </tr>
         </table>
+
+        <button><a href="/products/create">Create</a></button>
     </main>
 </body>
 </html>

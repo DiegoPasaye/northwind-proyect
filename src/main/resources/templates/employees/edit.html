@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <main>
+        <h1>Editar</h1>
+
+        <!--<form th:action="@{/products/{id}/edit(id=*{productId})}" method="post">-->
+        <form action="/employees/{id}/edit" method="post">
+            <input type="number" placeholder="Product ID:">
+            <input type="text" placeholder="Product name:">
+            <input type="number" placeholder="Supplier id:">
+            <input type="text" placeholder="Quantity per unit:">
+            <input type="number" placeholder="Unit price:">
+            <input type="number" placeholder="Units in stock">
+            <input type="number" placeholder="Units on order:">
+            <input type="number" placeholder="Reorder level:">
+            <input type="number" placeholder="Reorder level:">
+            <input type="number" placeholder="Reorder level:">
+            <input type="text" placeholder="Reorder level:">
+            <input type="text" placeholder="Reorder level:">
+            <input type="number" placeholder="Reorder level:">
+            <input type="number" placeholder="Reorder level:">
+            <input type="number" placeholder="Reorder level:">
+            <input type="number" placeholder="Reorder level:">
+            <input type="number" placeholder="Reorder level:">
+            <input type="number" placeholder="Reorder level:">
+
+            <button type="submit">Enviar</button>
+        </form>
+        
+    </main>
+</body>
+</html>
+
+
+
+<!--TH:FIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            <input type="number" th:field="*{employeeId}" placeholder="Product ID:">
+            <input type="text" th:field="*{firstName}" placeholder="Product name:">
+            <input type="number" th:field="*{lastName}" placeholder="Supplier id:">
+            <input type="text" th:field="*{title}" placeholder="Quantity per unit:">
+            <input type="number" th:field="*{titleOfCourtesy}" placeholder="Unit price:">
+            <input type="number" th:field="*{birthDate}" placeholder="Units in stock">
+            <input type="number" th:field="*{hireDate}"placeholder="Units on order:">
+            <input type="number" th:field="*{address}" placeholder="Reorder level:">
+            <input type="number" th:field="*{city}" placeholder="Reorder level:">
+            <input type="number" th:field="*{region}" placeholder="Reorder level:">
+            <input type="number" th:field="*{postalCode}" placeholder="Reorder level:">
+            <input type="number" th:field="*{country}" placeholder="Reorder level:">
+            <input type="number" th:field="*{homePhone}" placeholder="Reorder level:">
+            <input type="number" th:field="*{extension}" placeholder="Reorder level:">
+            <input type="number" th:field="*{photo}" placeholder="Reorder level:">
+            <input type="number" th:field="*{notes}" placeholder="Reorder level:">
+            <input type="number" th:field="*{reportsTo}" placeholder="Reorder level:">
+            <input type="number" th:field="*{photoPath}" placeholder="Reorder level:">
+-->
