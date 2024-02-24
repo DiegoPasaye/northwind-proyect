@@ -63,15 +63,17 @@ public class ProductController {
         return "product/edit";
     }
     
-    //ID GENERATED IS RARE IN URL, ISN´T PATH ID
     @PostMapping("/products/{id}/edit")
     public String updateProduct(@PathVariable("id") Long id, @ModelAttribute Products products) {
         Products products2 = productRepository.findById(id).orElse(null);
+        if(products2.getUnitsInStock() <= 1){
+            return "Discontinued";
+        }
+
+        
         if (products2 != null) {
             BeanUtils.copyProperties(products, products2, "id");
             products2.setDiscontinued(0);
-
-            
             productRepository.save(products2);
         }
         return "redirect:/products";

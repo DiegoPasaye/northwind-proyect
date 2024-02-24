@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit</title>
+    <link rel="stylesheet" href="../../static/css/crudForms.css" th:href="@{/css/crudForms.css}">
 </head>
 <body>
-    <main>
-        <h1>Editar</h1>
-            <form th:action="@{/products/{id}/edit(id=*{productId})}" th:object="${products}" method="post">
-                <input type="number" th:field="*{productId}" placeholder="Product ID:">
-                <input type="text" th:field="*{productName}" placeholder="Product name:">
-                <input type="number" th:field="*{supplierId}" placeholder="Supplier id:">
-                <input type="text" th:field="*{quantityPerUnit}" placeholder="Quantity per unit:">
-                <input type="number" th:field="*{unitPrice}" placeholder="Unit price:">
-                <input type="number" th:field="*{unitsInStock}" placeholder="Units in stock">
-                <input type="number" th:field="*{unitsOnOrder}"placeholder="Units on order:">
-                <input type="number" th:field="*{reorderLevel}" placeholder="Reorder level:">
-
-
-                <!--ERROOOOOOR, WHY? IF I TRY WITH DISCONTINUED TH FIELD, IT BROKE: An error happened during template parsing (template: "class path resource [templates/product/create.html]")-->
-                <input type="number" placeholder="Discontinued:">
+    <main class="crudFormMain">
+        <nav>
+            <h2>Editar</h2>
+        </nav>
+            <form th:action="@{/products/{id}/edit(id=*{productId})}" th:object="${products}" method="post" class="crudForm">
+                <input type="number" required th:field="*{productId}" placeholder="Product ID:">
+                <input type="text" required th:field="*{productName}" placeholder="Product name:">
+                <input type="number" required th:field="*{supplierId}" placeholder="Supplier id:">
+                <input type="text" required th:field="*{quantityPerUnit}" placeholder="Quantity per unit:">
+                <input type="number" required th:field="*{unitPrice}" placeholder="Unit price:">
+                <input type="number" required th:field="*{unitsInStock}" placeholder="Units in stock">
+                <input type="number" required th:field="*{unitsOnOrder}"placeholder="Units on order:">
+                <input type="number" required th:field="*{reorderLevel}" placeholder="Reorder level:">
+                <input type="number" required placeholder="Discontinued:">
 
 
                 <button type="submit" value="actualizar">Send</button>

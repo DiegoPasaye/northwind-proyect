@@ -17,11 +17,17 @@ public class Products {
     @Column(name = "product_id")
     private long productId;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
+    private Categories categoryId;
+    @ManyToOne
+    @JoinColumn(name = "supplier_id", nullable = false)
+    private Suppliers supplierId;
+
+
     @Column(name = "product_name")
     private String productName;
 
-    @Column(name = "supplier_id")
-    private long supplierId;
 
     @Column(name = "quantity_per_unit")
     private String quantityPerUnit;
@@ -43,10 +49,6 @@ public class Products {
 
 
 
-    //!!!!!!
-    // @ManyToOne
-    // @JoinColumn(name = "category_id")
-    // private Categories category;
 
 
     public Products(){
@@ -67,11 +69,11 @@ public class Products {
         this.productName = productName;
     }
 
-    public long getSupplierId() {
+    public Suppliers getSupplierId() {
         return supplierId;
     }
 
-    public void setSupplierId(long supplierId) {
+    public void setSupplierId(Suppliers supplierId) {
         this.supplierId = supplierId;
     }
 

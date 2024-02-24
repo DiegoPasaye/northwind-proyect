@@ -22,19 +22,17 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Price</th>
-                <th>Stock</th>
+                <th>Description</th>
                 <th></th>
                 <th></th>
             </tr>
-            <tr th:each="products : ${products}">
-                <td th:text="${products.productId}"></td>
-                <td th:text="${products.productName}"></td>
-                <td th:text="${products.unitPrice}"></td>
-                <td th:text="${products.unitsInStock}"></td>
-                <td><button><a th:href="@{/products/{id}/edit(id=${products.productId})}">Editar</a></button></td>
+            <tr th:each="categories : ${categories}">
+                <td th:text="${categories.categoryId}"></td>
+                <td th:text="${categories.categoryName}"></td>
+                <td th:text="${categories.description}"></td>
+                <td><button><a th:href="@{/categories/{id}/edit(id=${categories.categoryId})}">Editar</a></button></td>
                 <td>
-                    <form th:action="@{/products/{id}(id=${products.productId})}" method="post">
+                    <form th:action="@{/categories/{id}(id=${categories.categoryId})}" method="post">
                         <input type="hidden" name="_method" value="delete" />
                         <button type="submit">Delete</button>
                     </form>

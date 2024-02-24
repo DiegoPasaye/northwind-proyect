@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="stylesheet" href="../../static/css/crudForms.css" th:href="@{/css/crudForms.css}">
+</head>
+<body>
+    <main class="crudFormMain">
+        <nav>
+            <h2>Create</h2>
+        </nav>
+        <form action="#" th:action="@{/suppliers/new}" th:object="${suppliers}" method="post" class="crudForm">
+            <input type="number" required th:field="*{supplierId}" placeholder="Supplier ID:">
+            <input type="text" required th:field="*{companyName}" placeholder="Company name:">
+            <input type="text" required th:field="*{contactName}" placeholder="Contact name:">
+            <input type="text" required th:field="*{contactTitle}" placeholder="Contact title:">
+            <input type="text" required th:field="*{address}" placeholder="Address:">
+            <input type="text" required th:field="*{city}" placeholder="City">
+            <input type="text" required th:field="*{region}"placeholder="Region:">
+            <input type="text" required th:field="*{postalCode}" placeholder="Postal code:">
+            <input type="text" required th:field="*{country}" placeholder="Country:">
+            <input type="text" required th:field="*{phone}" placeholder="Phone:">
+            <input type="text" required th:field="*{fax}" placeholder="Fax:">
+            <input type="text" required th:field="*{homepage}" placeholder="Homepage:">
+            <button type="submit" value="crear">Crear</button>
+        </form>
+        
+    </main>
+</body>
+</html>

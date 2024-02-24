@@ -16,13 +16,15 @@ import jakarta.persistence.Table;
 public class Orders {
     @Id
     @Column(name = "order_id")
-    private Long id;
+    private Long orderId;
 
-    @Column(name = "customer_id")
-    private Long customerId;
+     @ManyToOne
+     @JoinColumn(name = "customer_id", nullable = false)
+     private Customers customerId;
+    @ManyToOne
+    @JoinColumn(name = "employee_id", nullable = false)
+    private Employees employeeId;
 
-    @JoinColumn(name = "employee_id")
-    private Long employeeId;
 
     @Column(name = "order_date")
     private String orderDate;
@@ -58,26 +60,28 @@ public class Orders {
     private String shipCountry;
 
     public Long getId() {
-        return id;
+        return orderId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.orderId = id;
     }
 
-    public Long getCustomerId() {
+
+    //Si no funciona lo regreso a un getter y setter convencional con long
+    public Customers getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(Long customerId) {
+    public void setCustomerId(Customers customerId) {
         this.customerId = customerId;
     }
 
-    public Long getEmployeeId() {
+    public Employees getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(Long employeeId) {
+    public void setEmployeeId(Employees employeeId) {
         this.employeeId = employeeId;
     }
 

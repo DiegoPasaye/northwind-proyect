@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="stylesheet" href="../../static/css/crudForms.css" th:href="@{/css/crudForms.css}">
+</head>
+<body>
+    <main class="crudFormMain">
+        <nav>
+            <h2>Create</h2>
+        </nav>
+        <form action="#" th:action="@{/categories/new}" th:object="${categories}" method="post" class="crudForm">
+            <input type="number" required th:field="*{categoryId}" placeholder="Category ID:">
+            <input type="text" required th:field="*{categoryName}" placeholder="category name:">
+            <input type="number" required th:field="*{description}" placeholder="description:">
+            <input type="text" required th:field="*{picture}" placeholder="picture:">
+
+            <button type="submit" value="crear">Crear</button>
+        </form>
+        
+    </main>
+</body>
+</html>
