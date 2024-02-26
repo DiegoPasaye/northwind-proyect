@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,9 +19,9 @@ public class Orders {
     @Column(name = "order_id")
     private Long orderId;
 
-     @ManyToOne
-     @JoinColumn(name = "customer_id", nullable = false)
-     private Customers customerId;
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customers customerId;
     @ManyToOne
     @JoinColumn(name = "employee_id", nullable = false)
     private Employees employeeId;

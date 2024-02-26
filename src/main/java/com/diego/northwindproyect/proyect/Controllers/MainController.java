@@ -21,4 +21,14 @@ public class MainController {
         model.addAttribute("products", products);
         return "main/indexProducts";
     }
+
+
+    @GetMapping("/register")
+    public String register(){
+        return"main/register";
+    }
+    @GetMapping("/login")
+    public String login(){
+        return"main/login";
+    }
 }
